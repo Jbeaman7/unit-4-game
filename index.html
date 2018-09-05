@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Power-Up Collector</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
+     
             <link rel="stylesheet" href="assets/css/reset.css" type="text/css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <link rel="stylesheet" href="assets/css/style.css" type="text/css">
               <audio id="victory"><source src="assets/audio/win.mp3"></audio>
               <audio id="fail"><source src="assets/audio/lose.mp3"></audio>
+              <audio id="click"><source src="assets/audio/nsmb_coin.wav"></audio>
               
   </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
   <body>
-    <!--<audio autoplay loop>
-      <source src="assets/audio/main.mp3">
-</audio><!-->
+    <audio autoplay loop>
+      <source id="mainaudio" src="assets/audio/main (2).mp3">
+</audio>
   <div class="header row">
       <img class="col-2" src="assets/images/2000px-Mario_Series_Logo.svg.png" width="200px" height="200px">  
         <h1 class=" col-6 offset-1 display-1 text-primary">Power-Up Collector</h1>        
@@ -55,7 +57,7 @@
                 <br>
                 <br>
                 <hr>
-                <h2 class="text-white">Your total score is:<span id="newscore"></span></h2>
+                <h2 class="text-white">Your total score is:<span id="score"></span></h2>
                 <br>
                 <br>
                 <hr>

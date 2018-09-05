@@ -2,7 +2,7 @@
 $(document).ready(function(){
     var mysteryNumber= Math.floor(Math.random() *101+19)
     $("#randomNumber").text(" " + mysteryNumber);
-})
+
 
 
 //Variables
@@ -13,8 +13,8 @@ var num3 = Math.floor(Math.random()* 11+1)
 var num4 = Math.floor(Math.random()* 11+1)
 
 var total= 0;
-var wins= 0;
-var losses= 0;
+var wins= " ";
+var losses= " ";
 
 $("#wins").text(wins);
 $("#losses").text(losses);
@@ -29,7 +29,7 @@ function reset(){
     num3= Math.floor(Math.random()*11+1);
     num4= Math.floor(Math.random()*11+1);
     total= 0;
-    $("#score").text(total);
+    $("#score").text(" ");
 }
 
 
@@ -38,7 +38,7 @@ function winner(){
     alert("You Win!");
     $('audio#victory')[0].play();
     wins++; 
-    $('#numberWins').text(wins);
+    $('#wins').text("Wins: " + wins);
     reset();
 }
 
@@ -47,12 +47,59 @@ function loser(){
     alert ("You lose!");
     $('audio#fail')[0].play();
       losses++;
-      $('#numberLosses').text(losses);
+      $('#losses').text("Losses: " + losses);
       reset()
     }
 
-    $('#item1').on ('click', function(){
-        total = total + num1;
-        console.log("New total= " + total);
-        $('#score').text(total); 
-    });
+        $('#item1').on ('click', function(){
+            $('audio#click')[0].play();
+            total = total + num1;
+            
+            $('#score').text(" " + total); 
+            if (total === mysteryNumber){
+                winner();
+              }
+              else if (total > mysteryNumber){
+                loser();
+              }   
+        });
+
+        $('#item2').on ('click', function(){
+            $('audio#click')[0].play()
+            total = total + num2;
+            
+            $('#score').text(" " + total); 
+            if (total === mysteryNumber){
+                winner();
+              }
+              else if (total > mysteryNumber){
+                loser();
+              } 
+        });
+
+        $('#item3').on ('click', function(){
+            $('audio#click')[0].play()
+            total = total + num3;
+            
+            $('#score').text(" " + total); 
+            if (total === mysteryNumber){
+                winner();
+              }
+              else if (total > mysteryNumber){
+                loser();
+              }   
+        });
+
+        $('#item4').on ('click', function(){
+            $('audio#click')[0].play()
+            total = total + num4;
+            
+            $('#score').text(" " + total); 
+            if (total === mysteryNumber){
+                winner();
+              }
+              else if (total > mysteryNumber){
+                loser();
+              }   
+        });
+    })
